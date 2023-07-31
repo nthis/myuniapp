@@ -1,0 +1,20 @@
+{
+    "name": "RfidModule",
+    "id": "Ucchip-RfidModule",
+    "version": "0.1.1",
+    "description": "御芯微 rfid",
+    "_dp_type": "nativeplugin",
+    "_dp_nativeplugin": {
+        "android": {
+            "plugins": [
+                {
+                    "type": "module",
+                    "name": "Ucchip-RfidModule",
+                    "class": "com.ucchip.rfid.sdk.RfidModule"
+                }
+            ],
+            "integrateType": "aar",
+            "minSdkVersion": "26"
+        }
+    }
+}

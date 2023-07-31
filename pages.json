@@ -1,0 +1,162 @@
+{
+	"pages": [{
+		"path": "pages/index/startPage/startPage",
+		"style": {
+			"navigationBarTitleText": "",
+			"enablePullDownRefresh": false,
+			"navigationStyle": "custom"
+		}
+	}, {
+		"path": "pages/index/index",
+		"style": {
+			"navigationBarTitleText": "控制台"
+		}
+	}, {
+		"path": "pages/index/login",
+		"style": {
+			"navigationBarTitleText": "",
+			"enablePullDownRefresh": false,
+			"navigationStyle": "custom"
+		}
+	}, {
+		"path": "pages/index/report",
+		"style": {
+			"navigationBarTitleText": "报表",
+			"enablePullDownRefresh": false
+		}
+	}, {
+		"path": "pages/index/mine",
+		"style": {
+			"navigationBarTitleText": "我的",
+			"enablePullDownRefresh": false,
+			"navigationStyle": "custom"
+		}
+	}, {
+		"path": "pages/index/serviceSet",
+		"style": {
+			"navigationBarTitleText": "服务器配置",
+			"enablePullDownRefresh": false,
+			"app-plus": {
+				"animationType": "slide-in-bottom",
+				"titleNView": {
+					"buttons": [{
+						"float": "right",
+						"text": "保存",
+						"fontSize": "14"
+					}]
+				}
+			}
+		}
+	}, {
+		"path": "pages/task/task",
+		"style": {
+			"navigationBarTitleText": "创建盘点任务",
+			"enablePullDownRefresh": false
+		}
+	}, {
+		"path": "pages/task/taskList",
+		"style": {
+			"navigationBarTitleText": "盘点任务",
+			"enablePullDownRefresh": false
+		}
+	}, {
+		"path": "pages/task/userList",
+		"style": {
+			"navigationBarTitleText": "用户列表",
+			"enablePullDownRefresh": false
+		}
+	}, {
+		"path": "pages/task/taskDetail/taskDetail",
+		"style": {
+			"navigationBarTitleText": "盘点任务",
+			"enablePullDownRefresh": false,
+			"navigationStyle": "custom"
+		}
+	}, {
+		"path": "pages/asset/assetFind/assetFind",
+		"style": {
+			"navigationBarTitleText": "资产查找",
+			"enablePullDownRefresh": false,
+			"app-plus": {
+				"animationType": "slide-in-bottom",
+				"titleNView": {
+					"buttons": [{
+						"float": "right",
+						"text": "RFID",
+						"fontSize": "14"
+					}]
+				}
+			}
+		}
+	}, {
+		"path": "pages/asset/assetList/assetList",
+		"style": {
+			"navigationBarTitleText": "资产列表",
+			"enablePullDownRefresh": true
+		}
+	}, {
+		"path": "pages/asset/maintenanceList/maintenanceList",
+		"style": {
+			"navigationBarTitleText": "保养列表",
+			"enablePullDownRefresh": true
+		}
+	}, {
+		"path": "pages/asset/assetDetail/assetDetail",
+		"style": {
+			"navigationBarTitleText": "物资详情",
+			"enablePullDownRefresh": false,
+			"app-plus": {
+				"titleNView": {
+					"buttons": [{
+						"float": "right",
+						"text": "编辑",
+						"fontSize": "14",
+						"color": "#43A5FF"
+					}]
+				},
+				"softinputmode": "adjustResize"
+			}
+		}
+	}, {
+		"path": "pages/asset/areaTree/areaTree",
+		"style": {
+			"navigationBarTitleText": "储位",
+			"enablePullDownRefresh": false
+		}
+	}],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8",
+		"app-plus": {
+			"background": "#efeff4"
+		}
+	},
+	"uniIdRouter": {},
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#1890FF",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/tabBar/home.png",
+				"selectedIconPath": "static/tabBar/homeActive.png",
+				"text": "控制台"
+			},
+			{
+				"pagePath": "pages/index/report",
+				"iconPath": "static/tabBar/look.png",
+				"selectedIconPath": "static/tabBar/lookActive.png",
+				"text": "报表"
+			},
+			{
+				"pagePath": "pages/index/mine",
+				"iconPath": "static/tabBar/user.png",
+				"selectedIconPath": "static/tabBar/userActive.png",
+				"text": "我的"
+			}
+		]
+	}
+}

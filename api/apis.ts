@@ -3,7 +3,7 @@ import { server } from './index'
 interface term {
 	column : string;
 	value : any;
-	type : string;
+	type : string | number;
 	termType: string;
 	options ?: any;
 	terms ?: Array<term>;
@@ -48,6 +48,8 @@ export const getKnifeInfo = (id : string) => server.get(`/knife/manager/${id}`);
 export const saveKnifeInfo = (data : any) => server.post('/knife/manager/save', data, jsonOptions);
 // 刀具类型查询
 export const knifeTypeListByQuery = (data : requestQuery) => server.post('/type-setting/_query', data, jsonOptions);
+// 刀具操作查询
+export const knifeOperatoinByQuery = (data: requestQuery) => server.post('/operation/records/_query', data, jsonOptions);
 
 
 // 用户列表查询

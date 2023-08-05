@@ -16,10 +16,6 @@
 		url: token ? '/pages/index/index' : '/pages/index/login',
 		complete: res => {
 			console.log('启动页:', res);
-			uni.showToast({
-				icon: 'none',
-				title: res
-			})
 		}
 	});
 </script>

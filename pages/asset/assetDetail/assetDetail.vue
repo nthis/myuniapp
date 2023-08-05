@@ -57,12 +57,13 @@
 			:info="formData"
 			useType="info"
 		/>
+		<button type="primary" class="mb-32" @click="toAssetOperation">刀具履历</button>
 		
 		<!-- #ifndef APP -->
 		<button @click="infoAction">{{ isEdit ? '确定' : '编辑' }}</button>
 		<!-- #endif -->
+		
 	</view>
-	
 </template>
 
 <script lang="ts" setup>
@@ -73,6 +74,15 @@
 	import { infoFields } from './data'
 	import { knifeTypeListByQuery, getKnifeInfo, saveKnifeInfo, getAreaListByQuery } from '@/api/apis'
 	import { server, requestResponse } from '@/api/index'
+	
+	const assetId = ref('');
+	
+	const toAssetOperation = () => {
+		console.log('跳转到刀具履历');
+		uni.navigateTo({
+			url: `/pages/asset/assetOperation/assetOperation?assetId=${assetId.value}`
+		})
+	};
 	
 	const formRef = ref();
 	const formData: any = reactive({});
@@ -208,6 +218,7 @@
 		}
 	};
 	onLoad((opt: any) => {
+		assetId.value = opt.id || '';
 		getInfo(opt.id);
 		getKnifeTypeList();
 	});
@@ -278,6 +289,11 @@
 			box-sizing: border-box;
 			background-color: #fff;
 			border-radius: 16rpx;
+			margin-bottom: 32rpx;
+		}
+		
+		.mb-32 {
+			margin-bottom: 24rpx;
 		}
 	}
 </style>

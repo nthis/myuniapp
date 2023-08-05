@@ -3,11 +3,6 @@
 		onLaunch: function() {
 			// console.warn('当前组件仅支持 uni_modules 目录结构 ，请升级 HBuilderX 到 3.1.0 版本以上！')
 			// console.log('App Launch')
-			// const userInfo = uni.getStorageSync('userInfo');
-			// uni.showToast({
-			// 	icon: 'none',
-			// 	title: userInfo ? '欢迎进入 app' : '请登录'
-			// })
 		},
 		onShow: function() {
 			console.log('App Show')

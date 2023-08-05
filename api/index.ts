@@ -33,8 +33,8 @@ class Request {
 		let requestAddress = ipAddress.indexOf('http') === 0 ? ipAddress : 'http://' + ipAddress;
 		if (port) requestAddress += `:${ port }`;
 		
-		// return ipAddress ? requestAddress + '/api' : '';
-		return ipAddress ? requestAddress : '';
+		return ipAddress ? requestAddress + '/api' : '';
+		// return ipAddress ? requestAddress : '';
 	};
 	
 	requestToast(title: string, type: ToastType = ToastType.None) {
@@ -46,7 +46,7 @@ class Request {
 
 	// 错误处理
 	errorCheck(res : any, errfun = () => { }, resfun = () => { }) {
-		console.log('errorCheck:', res);
+		// console.log('errorCheck:', res);
 		switch (res.statusCode) {
 			case 200:
 				typeof resfun === 'function' && resfun();

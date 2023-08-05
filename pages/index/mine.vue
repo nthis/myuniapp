@@ -5,7 +5,7 @@
 	</view>
 
 	<block v-for="(item, index) in list" :key="index">
-		<view class="d-flex index-cell">
+		<view class="d-flex index-cell" @click="cellAction(item)">
 			<view class="d-flex">
 				<uni-icons :type="item.icon" size="24" color="#1890FF"></uni-icons>
 				<text>&nbsp;{{ item.name }}</text>
@@ -36,9 +36,30 @@
 	import { loginout_api } from '@/api/apis'
 	import { TOKEN_KEY, USER_INFO } from '@/api/index'
 	const list = [
-		{ icon: 'help', name: '帮助', tips: '', url: '' },
-		{ icon: 'paperclip', name: '版本', tips: 'V0.8.01.2', url: '' },
+		{ icon: 'help', name: '帮助', key: 'help', tips: '', url: '' },
+		{ icon: 'paperclip', name: '版本', key: 'version', tips: 'V1.0.0', url: '' },
 	];
+	const cellAction = (item) => {
+		switch (item.key){
+			case 'help':
+				jumpToHelp();
+				break;
+			default:
+				break;
+		}
+	};
+	const jumpToHelp = () => {
+		// #ifdef APP
+		// plus.runtime.openURL('https://hexin.help.ucthings.com');
+		plus.runtime.openURL('https://hexin.help.ucthings.com/cutter/management-app.html#_1.%E7%99%BB%E5%BD%95%E4%B8%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E7%BD%AE');
+		// #endif
+		
+		// #ifndef APP
+		uni.navigateTo({
+			url: '/pages/webview/webview'
+		});
+		// #endif
+	}
 
 	const popup = ref();
 	const signout = () => {

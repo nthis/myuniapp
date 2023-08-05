@@ -24,12 +24,16 @@
 		getKnifeList(rfid);
 	};
 	const startInventory = () => {
-		RfidModule.startInventory(cb => {
+		uni.showToast({
+			icon: 'none',
+			title: '开始读取'
+		});
+		RfidModule.startInventory((cb: any) => {
 			if (cb.code == 200) readRfid(cb.data);
-			uni.showToast({
-				icon: 'none',
-				title: cb.data
-			})
+			// uni.showToast({
+			// 	icon: 'none',
+			// 	title: cb.data
+			// })
 		});
 	};
 	
@@ -50,7 +54,8 @@
 	};
 	
 	const stopInventory = () => {
-		RfidModule.stopInventory(cb => {
+		RfidModule.stopInventory((cb: any) => {
+			console.log('停止读取：', cb);
 			uni.showToast({
 				icon: 'none',
 				title: '停止读取'

@@ -25,7 +25,7 @@
 	const formData = reactive({
 		ipAddress: 'https://iot-hexin.dev.ucthings.com',
 		// ipAddress: '172.16.2.74',
-		// port: '60004',
+		port: '',
 		key: ''
 	});
 	const setIpAddress = () => {

@@ -28,7 +28,7 @@
 	<view class="empty-block" style="height: 560rpx;"></view>
 
 	<block v-for="item in knifeListState" :key="item.id">
-		<view class="page-card">
+		<view class="page-card" @click="toAssetDetail(item)">
 			<view class="page-card-title d-flex">
 				<text>{{ item.productName || '刀具' }}</text>
 				<text class="card-badge" :class="'card-badge-' + item.state">
@@ -41,7 +41,7 @@
 			<!-- <view class="page-card-badge">北京御芯微</view> -->
 			
 			<!-- #ifdef APP -->
-			<view class="page-card-action" @click="changeState(item)" v-if="item.state === 0">手动登记</view>
+			<view class="page-card-action" @click.stop="changeState(item)" v-if="item.state === 0">手动登记</view>
 			<!-- #endif -->
 		</view>
 	</block>
@@ -118,6 +118,12 @@
 		});
 	};
 	// #endif
+	
+	const toAssetDetail = (info: any) => {
+		uni.navigateTo({
+			url: '/pages/asset/assetDetail/assetDetail?id=' + info.assetId
+		});
+	};
 	
 	// 弹窗
 	const alertDialog = ref();
@@ -223,7 +229,6 @@
 			}
 		});
 	};
-
 
 	const changeTabState = (info : any) => {
 		data.knifeState = info.state || 0;
